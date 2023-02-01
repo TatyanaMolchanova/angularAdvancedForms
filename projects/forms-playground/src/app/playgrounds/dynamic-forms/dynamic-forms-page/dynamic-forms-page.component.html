@@ -1,0 +1,22 @@
+<div class="action-buttons">
+  <button (click)="formLoadingTrigger.next('user')" type="button">Load User Form</button>
+  <button (click)="formLoadingTrigger.next('company')" type="button">Load Company Form</button>
+</div>
+<div *ngIf="formConfig$ | async as formConfig" class="dynamic-form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h3 class="form-heading">{{formConfig.description}}</h3>
+    <div *ngFor="let control of formConfig.controls | keyvalue" class="form-field">
+      <label [for]="control.key">{{control.value.label}}</label>
+      <ng-container
+        [ngComponentOutlet]="controlResolver.resolve(control.value.controlType)"
+        [ngComponentOutletInjector]="control.key | controlInjector:control.value"></ng-container>
+      <div *ngIf="form.get(control.key)?.dirty && form.get(control.key)?.hasError('required')" class="input-error">This field is required</div>
+      <div *ngIf="form.get(control.key)?.dirty && form.get(control.key)?.hasError('email')" class="input-error">It must be a valid email</div>
+      <div *ngIf="form.get(control.key)?.dirty && form.get(control.key)?.hasError('minlength')" class="input-error">
+        The field must be at least {{ form.get(control.key)?.getError('minlength').requiredLength }} characters
+      </div>
+      <div *ngIf="form.get(control.key)?.dirty && form.get(control.key)?.hasError('banWords')" class="input-error">This word is not allowed</div>
+    </div>
+    <button [disabled]="form.invalid">Save</button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+.content {
+  --edge-space: calc(var(--spacing-step) * 4);
+  margin: var(--edge-space);
+}
+.page-title {
+  margin-bottom: var(--spacing-step);
+  font-size: var(--font-size-h1);
+}
+.page-content {
+  --min-height: calc(100vh - var(--height-header) - var(--height-footer) - (var(--edge-space) * 2));
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing-step) * 3);
+  box-sizing: border-box;
+  min-height: var(--min-height);
+}
+.footer {
+  margin-top: calc(0px - var(--spacing-step) * 2);
+}

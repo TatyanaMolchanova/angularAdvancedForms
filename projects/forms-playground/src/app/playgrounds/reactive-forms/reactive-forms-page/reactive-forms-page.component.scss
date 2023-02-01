@@ -1,0 +1,30 @@
+.add-button {
+  width: 46px;
+  padding: 5px;
+}
+.control-buttons {
+  margin-bottom: var(--spacing-step);
+  display: flex;
+  justify-content: flex-end;
+}
+.control-container {
+  display: flex;
+  align-items: center;
+}
+.remove-button {
+  width: 50px;
+  min-width: 45px;
+  margin: 0 0 0 10px;
+  background-color: transparent;
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+.phone-label-dropdown {
+  margin-right: var(--spacing-step);
+  width: 110px;
+}
+
+.skill-container {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,35 @@
+{
+  "description": "The new user form config",
+  "controls": {
+    "displayName": {
+      "controlType": "input",
+      "type": "text",
+      "label": "Full Name",
+      "value": "",
+      "validators": {
+        "required": true,
+        "minLength": 2,
+        "banWords": ["Test", "Dummy"]
+      }
+    },
+    "email": {
+      "controlType": "input",
+      "type": "email",
+      "label": "Email",
+      "value": "",
+      "validators": {
+        "email": true
+      }
+    },
+    "role": {
+      "controlType": "select",
+      "label": "User Role",
+      "value": "",
+      "options": [
+        { "label": "Admin", "value": "admin" },
+        { "label": "Editor", "value": "editor" },
+        { "label": "Guest", "value": "guest" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+.header {
+  display: flex;
+  height: var(--height-header);
+  background-color: var(--color-primary);
+  padding: 5px 15px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  margin-right: 25px;
+  width: 140px;
+}
+.nav-link {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  &.active {
+    border: 1px solid white;
+  }
+}
+.nav {
+  display: flex;
+}
+.global-search {
+  max-width: 350px;
+}

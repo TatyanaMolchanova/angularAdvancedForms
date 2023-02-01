@@ -1,0 +1,14 @@
+:host {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.action-buttons {
+  max-width: 300px;
+  margin-right: calc(var(--spacing-step) * 2);
+}
+.dynamic-form-container {
+  padding: calc(var(--spacing-step) * 2);
+}
+.form-heading {
+  margin-bottom: calc(var(--spacing-step) * 2);
+}

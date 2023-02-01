@@ -1,0 +1,6 @@
+<ul class="rating-options" [ngClass]="{ disabled: disabled }">
+  <li [ngClass]="{ active: value === 'great' }" (click)="setValue('great')">👌</li>
+  <li [ngClass]="{ active: value === 'good' }" (click)="setValue('good')">😊</li>
+  <li [ngClass]="{ active: value === 'neutral' }" (click)="setValue('neutral')">😐</li>
+  <li [ngClass]="{ active: value === 'bad' }" (click)="setValue('bad')">🥺</li>
+</ul>
